@@ -1,5 +1,4 @@
 <?php
-// Replace with your database connection details
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -15,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
-    $username = $_POST['username'] ?? strtolower($firstName . $lastName); // Optional
+    $username = $_POST['username'] ?? strtolower($firstName . $lastName); 
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO users (first_name, last_name, email, username, password) VALUES (?, ?, ?, ?, ?)";
